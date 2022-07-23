@@ -77,34 +77,3 @@ for num_fold in range(1,6):
 result_df.index = ["Loss", "AUC", "ACC", "MCC"]
 print(result_df.mean(axis=1))
 print(result_df.std(axis=1))
-
-# load weight and evalute
-# model = BaseGCNModel(gcn_hid_dim=32,
-#                       fc_dim_1=1024, fc_dim_2=512, output_dim=5,
-#                       init_graph=graph_norm_dense,
-#                       dropout_rate=0.8,
-#                       pool_method="max")
-
-# model = BaseGCNModel_addSE(gcn_hid_dim=32,
-#                             se_embed_dim=32, se_input_dim=train_data.shape[-1],  
-#                             fc_dim_1=1024, fc_dim_2=512, output_dim=5, 
-#                             init_graph=graph_norm_dense,
-#                             dropout_rate=0.5,
-#                             pool_method="max")
-
-# model = BaseGCNModel_addAttn(gcn_hid_dim=32,
-#                             attn_embed_dim=512,  
-#                             fc_dim_1=1024, fc_dim_2=512, output_dim=5, 
-#                             init_graph=graph_norm_dense,
-#                             dropout_rate=0.5,
-#                             pool_method="max")
-
-
-# model.load_weights("./modelSave/BaseGCN_addAttn_0516_fold5\\ckpt")
-# model.compile(optimizer=optimizer, loss=loss_tracker, metrics=[metrics_auc, metrics_acc, metrics_mcc])
-# model.evaluate(train_X, train_y_onehot)
-# model.evaluate(test_X, test_y_onehot)
-
-#get SE attention score
-# model.SE(train_X)
-
